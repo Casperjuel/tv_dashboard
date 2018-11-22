@@ -1,0 +1,22 @@
+.base {
+    padding:40px;
+    min-height: 600px;
+    height: auto;
+    overflow: hidden;
+    width: auto;
+    background-attachment: fixed;
+    background-color: #eee;
+    background-size: 120px 120px;
+    background-image: url('data:image/svg+xml,\
+    <svg xmlns="http://www.w3.org/2000/svg">\
+    <text color="white" font-size="60" x="60px" y="60px">☝️</text>\
+    </svg>');
+}
+
+.promoted {
+    composes: base;
+    background-image: url('data:image/svg+xml,\
+      <svg xmlns="http://www.w3.org/2000/svg">\
+      <text color="white" font-size="60" x="60px" y="60px">💩🤑</text>\
+      </svg>');
+}

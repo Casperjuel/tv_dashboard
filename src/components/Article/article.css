@@ -1,0 +1,108 @@
+@value colors: "../../root.css";
+@value brand-red, brand-green from colors;
+
+@keyframes :global(slideIn) {
+    from {
+        transform: rotate(45deg) translateY(-150%)
+    }
+    to {
+        transform: rotate(45deg) translateY(0%)
+    }
+}
+
+.article {
+    --brand-red: brand-red;
+    --brand-green: brand-green;
+    --status-color: #aaa;
+    position: relative;
+    background: #0E1C1F;
+    border: 1px solid #0D1A1C;
+    max-width: 320px;
+    padding-bottom: 50px;
+    box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.06);
+    margin: 20px;
+    color: white;
+    border-radius: 5px;
+
+}
+
+.symbol {
+    width: 80px;
+    height: 80px;
+    border-radius: 5px;
+    transform: rotate(45deg);
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: -40px;
+    display: flex;
+    z-index: 999;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--status-color);
+}
+
+.symbolSpan {
+    display: block;
+    transform: rotate(-45deg);
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.indicatorWrapper {
+    border-top: 5px solid var(--status-color);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: auto;
+    overflow: hidden;
+    height: 200px;
+}
+
+.indicator {
+    position: absolute;
+    top: -70%;
+    display: block;
+    width: 250px;
+    height: 250px;
+    transform: rotate(45deg);
+    opacity: 0.1;
+    background-color: var(--status-color);
+    left: -20%;
+    border-radius: 20px;
+    :global {
+        animation-duration: 900ms;
+        animation-name: slideIn;
+        animation-fill-mode: forwards;
+    }
+}
+
+.indicator+.indicator {
+    left: initial;
+    right: -20%;
+}
+
+.values {
+    padding-top: 50%;
+    text-align: center;
+}
+
+.title {
+    display: block;
+    font-size: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.value {
+    font-size: 60px;
+    margin: 40px auto 40px;
+}
+
+.difference {
+    color: var(--status-color);
+}

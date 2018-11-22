@@ -1,0 +1,13 @@
+.base {
+    margin-top: 100px;
+    background: green;
+    height: 100px;
+    width: auto;
+    overflow: hidden;
+    background-attachment: fixed;
+}
+
+.loggedIn {
+    composes: base;
+    background: red;
+}

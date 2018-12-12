@@ -10,25 +10,31 @@ class App extends Component {
   }
 
   render() {
+    const data = [65, 59, 80, 81, 56, 55, 40];
+
     return (
       <>
         <div className={style.articleList}>
           <Article
             negative
             symbol="%"
-            value="0.45"
+            value={0.45}
             title="Overall bounce rate"
-            before="0.47"/>
+            before={0.47}
+          />
           <Article
             symbol="%"
             value={0.45}
             title="E-Conversion rate"
-            before={0.48}/>
+            before={0.48}
+            chartData={data}
+          />
           <Article
             symbol="Users"
             value={1431221}
             title="users"
-            before={131221}/>
+            before={131221}
+          />
         </div>
         <div className={style.articleList}>
           <Article symbol="%" value={0.49} title="Goal 1" before={0.47} />

@@ -4,15 +4,18 @@ import style from './article.css';
 import { getPercentageChange } from '../../helpers';
 import ChartRender from '../Chart';
 
-const Article = ({ chartData, value, title, before, symbol, negative }) => {
+const Article = ({ chartData, value, name, previous, symbol, negative }) => {
   const article = null;
-  const difference = getPercentageChange(before, value);
+  const difference = getPercentageChange(previous, value);
   const direction = Math.sign(difference);
+
+  console.log(negative);
 
   const statusColor = {
     '--status-color':
       direction === -1 ? 'var(--brand-red)' : 'var(--brand-green)',
   };
+
   return (
     <article className={style.article} style={statusColor}>
       <div className={style.symbol}>
@@ -23,23 +26,23 @@ const Article = ({ chartData, value, title, before, symbol, negative }) => {
         <span className={style.indicator} />
       </div>
       <div className={style.values}>
-        <span className={style.title}>{title}</span>
+        <span className={style.title}>{name}</span>
         <h2 className={style.value}>
           {`${value} ${symbol === '%' ? '%' : ''}`}
         </h2>
         <span className={style.difference}>
           {'Previous: '}
-          {`${before} ${symbol === '%' ? '%' : ''}`}
+          {`${previous} ${symbol === '%' ? '%' : ''}`}
         </span>
       </div>
-      {chartData && <ChartRender data={chartData} />}
+      {chartData && <ChartRender chartData={chartData} />}
     </article>
   );
 };
 
 Article.propTypes = {
-  title: PropTypes.string,
-  before: PropTypes.number,
+  name: PropTypes.string,
+  previous: PropTypes.number,
   value: PropTypes.number,
   chartData: PropTypes.array,
   symbol: PropTypes.string,

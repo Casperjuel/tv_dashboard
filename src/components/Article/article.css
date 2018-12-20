@@ -18,6 +18,7 @@
     background: #0E1C1F;
     border: 1px solid #0D1A1C;
     max-width: 320px;
+    min-width: 230px;
     height: auto;
     padding-bottom: 50px;
     box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.06);

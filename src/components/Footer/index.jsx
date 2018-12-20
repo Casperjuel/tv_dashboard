@@ -1,13 +1,11 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import style from './footer.css';
+import Clock from './Clock';
 
-const Footer = ({ loggedIn }) => (
-  <div className={loggedIn ? style.loggedIn : style.base}>Footer</div>
+const Footer = () => (
+  <div className={style.footer}>
+    <Clock className={style.Clock} />
+  </div>
 );
-
-Footer.propTypes = {
-  loggedIn: PropTypes.bool,
-};
 
 export default Footer;
